@@ -8,9 +8,11 @@ interface NavigationContextType {
   closeMobileNav: () => void;
 }
 
-const NavigationContext = createContext<NavigationContextType | undefined>(
-  undefined
-);
+export const NavigationContext = createContext<NavigationContextType>({
+  isMobileNavOpen: false,
+  setIsMobileNavOpen: () => {},
+  closeMobileNav: () => {},
+});
 
 export function NavigationProvider({
   children,
